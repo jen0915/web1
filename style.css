@@ -18,7 +18,9 @@ ol {
 #grid {
   display:grid;
   grid-template-columns: 150px 1fr;
-  height:575px;
+  grid-template-rows: 575px;
+  padding-bottom:20%;
+
 }
 #article {
   padding-left:90px;
@@ -28,6 +30,9 @@ ol {
 @media(max-width:900px){
    #grid {
       display:block;
+      padding-bottom:20%;
+      height: 545px;
+
     }
     ol {
       border-right:none;
