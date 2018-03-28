@@ -22,12 +22,17 @@ ol {
 b {
   color:blue;
 }
+li {
+  float:center;
+}
+iframe {
+  float: center;
+}
 #grid {
   display:grid;
   grid-template-columns: 150px 1fr;
   grid-template-rows: 800px;
-  padding-bottom:10%;
-
+  padding-bottom:15%;
 }
 #article {
   display:grid;
@@ -35,10 +40,16 @@ b {
   padding-top:20px;
   height:280px;
 }
+#calendar {
+  display:grid;
+  padding-left:200px;
+  padding-top:50px;
+  height:280px;
+}
 @media(max-width:900px){
    #grid {
       display:block;
-      padding-bottom:20%;
+      padding-bottom:30%;
       height: 575px;
 
     }
