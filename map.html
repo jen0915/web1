@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0">
+    <style>
+     /* Always set the map height explicitly to define the size of the div
+      * element that contains the map. */
+     #map {
+       height: 60%;
+       width: 50%;
+       margin-left: 0;
+       margin-right: 0;
+       margin: 50px;
+     }
+     #detail {
+       margin: 50px;
+     }
+     html, body {
+       height: 100%;
+       margin: 0;
+       padding: 0;
+     }
+     </style>
+    <title>찾아가는 길</title>
+  </head>
+  <body>
+    <div id="map"></div>
+
+    <div id="detail">수지구청 맞은편 수지우체국 옆 우리은행 건물 6층<br>
+      신분당선 수지구청역 1번출구 롯데마트 방면 300m</div>
+   <script>
+     var map;
+     function initMap() {
+       map = new google.maps.Map(document.getElementById('map'), {
+         center: {lat: 37.322020, lng: 127.096020},
+         zoom: 17
+       });
+       var marker = new google.maps.Marker({
+          position: {lat: 37.322020, lng: 127.096020},
+          map: map
+        });
+     }
+   </script>
+   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA630ecp3BtX1t4mTKcV_fsruIBXgR8ks4&callback=initMap"
+   async defer></script>
+  </body>
+</html>

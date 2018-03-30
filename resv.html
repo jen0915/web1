@@ -17,60 +17,62 @@
 
     <script type="text/javascript">
     $(document).ready(function() {
+      var lang_cd = 'ko';
+
 
     		$('#calendar').fullCalendar({
     			header: {
-    				left: 'prev,next today',
+    				left: '',
     				center: 'title',
-    				right: 'month,agendaWeek,agendaDay'
+    				right: 'today prev,next'
     			},
-    			defaultDate: '2014-06-12',
+    			defaultDate: '2018-04-01',
     			defaultView: 'month',
     			editable: true,
     			events: [
     				{
-    					title: 'All Day Event',
-    					start: '2014-06-01'
+
+    					title: '필라테스',
+    					start: '2018-04-05T17:00:00',
+              color:'pink'
+
     				},
     				{
-    					title: 'Long Event',
-    					start: '2014-06-07',
-    					end: '2014-06-10'
+
+    					title: '플라잉요가',
+    					start: '2018-04-02T20:00:00',
+              color: 'green'
     				},
     				{
-    					id: 999,
-    					title: 'Repeating Event',
-    					start: '2014-06-09T16:00:00'
-    				},
-    				{
-    					id: 999,
-    					title: 'Repeating Event',
-    					start: '2014-06-16T16:00:00'
-    				},
-    				{
-    					title: 'Meeting',
-    					start: '2014-06-12T10:30:00',
-    					end: '2014-06-12T12:30:00'
-    				},
-    				{
-    					title: 'Lunch',
-    					start: '2014-06-12T12:00:00'
-    				},
-    				{
-    					title: 'Birthday Party',
-    					start: '2014-06-13T07:00:00'
-    				},
-    				{
-    					title: 'Click for Google',
-    					url: 'http://google.com/',
-    					start: '2014-06-28'
+
+    					title: '플라잉요가',
+    					start: '2018-04-17T19:00:00',
+              color: 'green'
     				}
-    			]
+    			],
+          dayClick: function(date, jsEvent, view){
+            var eventTitle=prompt("Provide Event Title");
+
+            if(eventTitle){
+                $('#calendar').fullCalendar('renderEvent', {
+                  title: eventTitle,
+                  start: moment(date).format('YYYY-MM-DD HH:MM:SS'),
+                  stick: true
+                });
+
+            }
+          }
     		});
+
 
     	});
 
     </script>
+    <style>
+    .fc-sat{color:blue;}
+    .fc-sun{color:red;}
+    </style>
+
   </head>
   <body>
     <input type="button" value="night" onClick="
@@ -79,6 +81,7 @@
     <h1><a href="index.html">에스더 필라테스</a></h1>
     <div id="grid">
         <ol>
+          <a href="map.html"><b>찾아가기</b></a><p>
           <a href="resv.html"><b>수업 예약하기</b></a><p>
           <b>수강 프로그램</b>
             <p>
